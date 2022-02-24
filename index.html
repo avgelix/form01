@@ -2,13 +2,61 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Form: Shipping</title>
+    <link rel="stylesheet" href="../css/screen.css"/>
+    <title>Log In</title>
   </head>
   <body>
-    <main>
 
-    </main>
+
+  <header>
+    <figure id="logo">
+      <img src="../assets/Spotify_Logo_CMYK_Green.png" alt="Spotify logo"/>
+    </figure>
+    <h1>Log In</h1>
+  </header>
+
+<main id="content">
+
+  <form aria-labelledby="label-login" action="shipping/" method="get">
+
+    <fieldset name="returning">
+      <ol>
+        <li>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" value=""/>
+        </li>
+        <li>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" value=""/>
+        </li>
+        <li>
+          <input type="checkbox" class= "checkbox" name="create" id="create" value=""/>
+          <label for="create">I need to create a new account</label>
+        </li>
+      </ol>
+    </fieldset>
+
+    <fieldset name="new" id="new">
+      <ol>
+        <li>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name"/>
+        </li>
+        <li>
+          <label for="birthday">Birthday</label>
+          <input type="date" name="birthday" id="birthday"/>
+        </li>
+      </ol>
+    </fieldset>
+
+    <button type="submit" name="proceed-button" class="forward">Log in</button>
+
+    </form>
+  </main>
+
+  <script src="js/site.js"></script>
     <footer>
+      <p>Bye bye</p>
     </footer>
   </body>
 </html>

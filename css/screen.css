@@ -1,0 +1,195 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* stylelint-disable*/
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/* stylelint-enable */
+
+/* Begin site styles below */
+
+/*
+This design is inspired by Spotify, as the form is effectively
+though as a possible interface for the Spotify app, if in the future
+there was ever the possibility to purchase merch or event tickets
+on the Spotify app
+*/
+
+/* Brand colors:
+GREEN: #1DB954 (accents)
+White: #FFFFF (text)
+Black: #191414 (background)
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 50%;
+}
+
+#ticket {
+  width: 65%;
+  float: left;
+}
+
+#logo {
+  width: 60px;
+  float: left;
+}
+
+header {
+  display: flow-root;
+}
+
+html {
+  font-size: 18px;
+  line-height: 22px;
+  padding: 11px;
+  font-family: Helvetica Neue, sans-serif;
+  color: white;
+  background-color: #191414;
+}
+
+main > * {
+  display: inline-block;
+}
+
+aside {
+  margin-top: 22px;
+  margin-bottom: 33px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-style: solid;
+  padding: 11px;
+  border-color: #1DB954;
+  border-width: medium;
+  font-size: 14px;
+  text-align: right;
+}
+
+h1 {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: bolder;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 44px;
+  padding-right: 60px;
+}
+
+form > fieldset > ol >li > input,
+form > fieldset > ol >li > select {
+  width: 100%;
+  color: gray;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+form > fieldset > ol >li > checkbox {
+  width: auto;
+}
+
+li {
+  margin-bottom: 11px;
+}
+
+footer {
+  font-size: 14px;
+  font-style: italic;
+  background-color: #1DB954;
+  margin-left: -11px;
+  margin-right: -11px;
+  padding-bottom: 11px;
+  margin-bottom: -11px;
+  margin-top: 66px;
+  color: white;
+  text-align: center;
+}
+
+.thank-you > *{
+  font-family: serif;
+  font-style: italic;
+  color: #1DB954;
+}
+
+.back {
+  color: #191414;
+  margin-top: 22px;
+  box-sizing: content-box;
+  padding: 6px;
+}
+
+.checkbox {
+  width: unset;
+}
+
+#delivery label::after {
+  content: "\a";
+  white-space: pre;
+}
+
+.forward {
+  padding: 6px;
+  color: white;
+  background-color: #1DB954;
+  margin-top: 22px;
+  margin-bottom: 66px;
+  box-sizing: content-box;
+  float: right;
+  border-radius: 5px;
+  border-color: black;
+}
+
+fieldset[aria-hidden="true"] {
+  display: none;
+}
+
+
+@media screen and (min-width: 400px)  {
+  aside {
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  form {
+    width: 90%;
+    margin: auto;
+    padding-left: 10%;
+  }
+
+}
+
+@media screen and (min-width: 500px)  {
+
+}
+
+
+@media screen and (min-width: 600px)  {
+
+  aside {
+    margin-left: 5%;
+  }
+
+  form {
+    width: 90%;
+    margin: auto;
+    padding-left: 14%;
+  }
+
+  form > ol > * {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%
+  }
+
+  form > fieldset > ol > * {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+ /* the content starts to look weird at this dimension: 1060px+*/

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/screen.css"/>
+    <title>Form: Billing</title>
+  </head>
+
+  <body>
+    <header>
+      <figure id="logo">
+        <img src="../assets/Spotify_Logo_CMYK_Green.png" alt="Spotify logo"/>
+      </figure>
+      <h1>Billing</h1>
+    </header>
+
+    <main id="content">
+
+      <aside id="shopping-cart">
+        <figure>
+          <img id="ticket" src="../assets/Double Exposure Style Summer Party Concert Ticket.png" alt="the weeknd
+          concert ticket"/>
+        </figure>
+        <figcaption></figcaption>
+        <ul>
+          <li>Your Items: $50</li>
+        </ul>
+
+      </aside>
+
+
+        <form class="billingoption" action="../summary/" method="get">
+          <fieldset name="payment">
+            <ol>
+              <li>
+                <input type="checkbox" class= "checkbox" name="shipping-info" id="shipping-info" value=""/>
+                <label for="shipping-info">Use Shipping Informatin</label>
+              </li>
+              <li>
+                <input type="checkbox" class= "checkbox" name="new-info" id="new-info" value=""/>
+                <label for="new-info">Insert New Information</label>
+            </li>
+            </ol>
+          </fieldset>
+
+          <fieldset name="use-new" id="use-new">
+            <ol>
+              <li><label for="fullname">Full Name</label>
+              <input type="text" name="fullname" value="" autocomplete="name" />
+              </li>
+
+              <li>
+              <label for="address">Address</label>
+              <input type="text" name="address" value="3000 N Flower Street, Box #1234"
+              autocomplete="street-address" />
+              </li>
+
+              <li>
+              <label for="zip">ZIP Code</label>
+              <input type="ZIP" name="zip" value="" autocomplete="postal-code" />
+              </li>
+
+              <li>
+              <label for="state">State</label>
+                <select id="state" name="state" autocomplete="address-level1">
+                  <option value="IL">Illinois</option>
+                  <option value="CA">California</option>
+                  <option value="NY">New York</option>
+                  <option value="FL">Florida</option>
+                </select>
+                </li>
+
+              <li>
+              <label for="city">City</label>
+              <input type="Country" name="city" value="" autocomplete="address-address-level2" />
+              </li>
+            </ol>
+          </fieldset>
+
+          <button type="submit" name="edit-button" class="back">Edit Delivery Information</button>
+          <button type="submit" name="proceed-button" class="forward">Confirm and Proceed</button>
+        </form>
+    </main>
+
+    <footer>
+      <p>Bye bye</p>
+    </footer>
+
+    <script src="../js/site.js"></script>
+  </body>
+</html>

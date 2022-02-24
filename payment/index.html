@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="delivery">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/screen.css"/>
+    <title>Form: Delivery</title>
+  </head>
+  <body>
+
+    <header>
+      <figure id="logo">
+        <img src="../assets/Spotify_Logo_CMYK_Green.png" alt="Spotify logo"/>
+      </figure>
+      <h1>Delivery Options</h1>
+    </header>
+
+    <main id="content">
+      <aside id="shopping-cart">
+        <figure>
+          <img id="ticket" src="../assets/Double Exposure Style Summer Party Concert Ticket.png" alt="the weeknd
+          concert ticket"/>
+        </figure>
+        <figcaption></figcaption>
+        <ul>
+          <li>Your Items: $50</li>
+        </ul>
+
+      </aside>
+
+        <form class="paymentoption" action="../billing/" method="get">
+          <fieldset name="payment">
+            <ol>
+              <li>
+                <input type="checkbox" class= "checkbox" name="credit-payment" id="credit-payment" value=""/>
+                <label for="credit-payment">Credit, Debit Card</label>
+              </li>
+              <li>
+                <input type="checkbox" class= "checkbox" name="cash-payment" id="cash-payment" value=""/>
+                <label for="cash-payment">Cash on Delivery</label>
+            </li>
+            </ol>
+          </fieldset>
+
+          <fieldset name="credit" id="credit">
+            <ol>
+              <li>
+                <label for="card-type">Card Type</label>
+                <input type="text" autocomplete="cc-cc-type" name="card-type" id="card-type"/>
+              </li>
+              <li>
+                <label for="card-cvc">Card Number</label>
+                <input type="number" autocomplete="cc-csc" name="card-cvc" id="card-cvc"/>
+              </li>
+              <li>
+                <label for="card-expires">Expires on:</label>
+                <input type="date" autocomplete="cc-exp" name="card-expires" id="card-expires"/>
+              </li>
+            </ol>
+          </fieldset>
+
+          <fieldset name="cash" id="cash">
+            <ol>
+              <li>By selecting this option I agree to pay for my order in cash at the time it is delivered
+                to me. I understand that I will not be given my order before I have paid the entire
+                amount in cash to the person delivering to me.</li>
+              <li>
+                <input type="checkbox" class="checkbox" name="cash-acknowledge" id="cash-acknowledge"/>
+                <label for="cash-acknowledge">I agree</label>
+              </li>
+            </ol>
+          </fieldset>
+
+          <button type="submit" name="edit-button" class="back">Edit Delivery Information</button>
+          <button type="submit" name="proceed-button" class="forward">Confirm and Proceed</button>
+        </form>
+    </main>
+
+    <footer>
+      <p>Bye bye</p>
+    </footer>
+
+    <script src="../js/site.js"></script>
+  </body>
+</html>

@@ -148,12 +148,16 @@ footer {
   float: right;
   border-radius: 5px;
   border-color: black;
+  margin-left: 6px;
 }
 
 fieldset[aria-hidden="true"] {
   display: none;
 }
 
+select {
+  width: 100%;
+}
 
 @media screen and (min-width: 400px)  {
   aside {
@@ -167,9 +171,22 @@ fieldset[aria-hidden="true"] {
     padding-left: 10%;
   }
 
+  .forward {
+    margin-left: 0;
+  }
+
 }
 
 @media screen and (min-width: 500px)  {
+  form > fieldset > ol >li > input,
+  select {
+    display: block;
+    max-width: 300px;
+  }
+
+  form > fieldset > ol >li > .checkbox {
+  display: inline;
+  }
 
 }
 
@@ -186,6 +203,10 @@ fieldset[aria-hidden="true"] {
     padding-left: 14%;
   }
 
+  form > fieldset > ol {
+  margin-left: 12%;
+  }
+
   form > ol > * {
     margin-left: auto;
     margin-right: auto;
@@ -195,8 +216,19 @@ fieldset[aria-hidden="true"] {
   form > fieldset > ol > * {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 68%;
 }
 
 
+@media screen and (min-width: 750px)  {
+  form > fieldset > ol {
+  margin-left: 20%;
+  }
+}
+
+@media screen and (min-width: 1000px)  {
+  form {
+    padding-left: 24%;
+  }
+}
  /* the content starts to look weird at this dimension: 1060px+*/

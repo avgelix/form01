@@ -117,9 +117,16 @@ footer {
 
 .back {
   color: #191414;
-  margin-top: 22px;
-  box-sizing: content-box;
   padding: 6px;
+  box-sizing: content-box;
+  background-color: #D3D3D3;
+  margin-top: 22px;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 5px;
+  border-color: white;
+  border-width: 4px;
+  text-decoration: none;
 }
 
 .checkbox {

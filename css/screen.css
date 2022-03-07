@@ -206,7 +206,7 @@ select {
   }
 
   form > fieldset > ol {
-  margin-left: 12%;
+    margin-left: 8%;
   }
 
   form > ol > * {

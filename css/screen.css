@@ -85,9 +85,17 @@ h1 {
 form > fieldset > ol >li > input,
 form > fieldset > ol >li > select {
   width: 100%;
-  color: gray;
   font-size: 14px;
   font-weight: lighter;
+  background-color: #EFEFEF;
+}
+
+.short-input > input {
+  width: 60%;
+}
+
+.short-input > label {
+  display: block;
 }
 
 form > fieldset > ol >li > checkbox {
@@ -175,6 +183,10 @@ select {
 
   .forward {
     margin-left: 0;
+  }
+
+  .short-input > input {
+    width: 40%;
   }
 
 }

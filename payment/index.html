@@ -48,12 +48,16 @@
                 <input type="text" autocomplete="cc-cc-type" name="card-type" id="card-type"/>
               </li>
               <li>
-                <label for="card-cvc">Card Number</label>
+                <label for="card-number">Card Number:</label>
+                <input type="text" autocomplete="cc-cc-type" name="card-number" id="card-type"/>
+              </li>
+              <li class="short-input">
+                <label for="card-cvc">CVC:</label>
                 <input type="number" autocomplete="cc-csc" name="card-cvc" id="card-cvc"/>
               </li>
-              <li>
+              <li class="short-input">
                 <label for="card-expires">Expires on:</label>
-                <input type="date" autocomplete="cc-exp" name="card-expires" id="card-expires"/>
+                <input type="month" autocomplete="cc-exp" name="card-expires" id="card-expires"/>
               </li>
             </ol>
           </fieldset>

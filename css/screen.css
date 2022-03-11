@@ -62,12 +62,10 @@ aside {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  border-style: solid;
+  border-style: outset;
   padding: 11px;
-  border-color: rgb(255, 255, 255, 0.03);
-  border-width: medium;
-  border-radius: 30px;
-  background: rgb(29, 185, 84, 0.8);
+  border-color: rgba(29, 185, 84, 0.35);
+  border-width: thick;
   font-size: 14px;
   text-align: right;
 }
@@ -236,15 +234,11 @@ select {
 
 @media screen and (min-width: 750px)  {
   form > fieldset > ol {
-  margin-left: 12%;
-  }
-
-  aside {
-    border-radius: 20px;
+  margin-left: 15%;
   }
 
   aside > * > * {
-    margin: 30px;
+    margin: 20px;
   }
 
   #ticket {
@@ -258,7 +252,6 @@ select {
   }
 
   aside {
-    border-radius: 40px;
     width: 70%;
     margin-left: 15%;
   }

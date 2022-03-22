@@ -25,8 +25,17 @@ Black: #191414 (background)
   box-sizing: border-box;
 }
 
+html {
+  font-size: 1.125em; /* 18/16 == 1.125em*/
+  line-height: 1.22222222em; /*22/18 == 1.22222222em*/
+  padding: 0.61111111em; /*11/18 == 0.61111111*/
+  font-family: "Helvetica Neue", sans-serif;
+  color: white;
+  background-color: #191414;
+}
+
 img {
-  width: 60px;
+  width: 3.33333333em; /*60/18 == 3.33333333em*/
 }
 
 #ticket {
@@ -35,7 +44,7 @@ img {
 }
 
 #logo {
-  width: 60px;
+  width: 3.33333333em; /*60/18 == 3.33333333em*/
   float: left;
 }
 
@@ -43,37 +52,28 @@ header {
   display: flow-root;
 }
 
-html {
-  font-size: 18px;
-  line-height: 22px;
-  padding: 11px;
-  font-family: Helvetica Neue, sans-serif;
-  color: white;
-  background-color: #191414;
-}
-
 main > * {
   display: inline-block;
 }
 
 aside {
-  margin-top: 22px;
-  margin-bottom: 33px;
+  margin-top: 1.22222222em; /*22/18 == 1.22222222em*/
+  margin-bottom: 1.83333333em; /*33/18 == 1.83333333em*/
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   border-style: outset;
-  padding: 11px;
+  padding: 0.61111111em;/* 11/18 == 0.61111111em*/
   border-color: rgba(29, 185, 84, 0.35);
   border-width: thick;
-  font-size: 14px;
+  font-size: 0.77777778em; /*14/18 == 0.77777778*/
   text-align: right;
 }
 
 
 #thank-you {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-top: 1.11111111em; /*20/18 = 1.11111111em*/
+  margin-bottom: 2.22222222em; /*40/18 == 2.22222222em */
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -81,27 +81,31 @@ aside {
 }
 
 h2 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1em; /*18/18 = 1em*/
+  line-height: 1.3333333em; /*24/18 == 1.3333333em*/
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 1.11111111em; /*20/18 == 1.11111111em */
   color: rgba(29, 185, 84);
 }
 
 h1 {
-  font-size: 22px;
-  line-height: 26px;
+  font-size: 1.22222222em; /* 22/18 == 1.22222222em*/
+  line-height: 1.18181818em; /* 26/22 == 1.18181818em */
   font-weight: bolder;
   text-align: center;
-  letter-spacing: 2px;
-  margin-bottom: 44px;
-  padding-right: 60px;
+  letter-spacing: 0.11111111em; /* 2/22 == 0.11111111em */
+  margin-bottom: 2.22222222em; /* 44/22 == 2.22222222em */
+  padding-right: 2.72727273em; /* 60/22 == 2.72727273em */
 }
 
-form > fieldset > ol >li > input,
-form > fieldset > ol >li > select {
+select {
   width: 100%;
-  font-size: 14px;
+}
+
+form > fieldset > ol > li > input,
+form > fieldset > ol > li > select {
+  width: 100%;
+  font-size: 0.77777778em;/* 14/18 == 0.77777778em */
   font-weight: lighter;
   background-color: #EFEFEF;
 }
@@ -114,28 +118,32 @@ form > fieldset > ol >li > select {
   display: block;
 }
 
-form > fieldset > ol >li > checkbox {
+.checkbox {
+  width: unset;
+}
+
+form > fieldset > ol > li > .checkbox {
   width: auto;
 }
 
 li {
-  margin-bottom: 11px;
+  margin-bottom: 0.61111111em; /*11/18 == 0.61111111em*/
 }
 
 footer {
-  font-size: 14px;
+  font-size: 0.77777778em;/* 14/18 == 0.77777778em */
   font-style: italic;
   background-color: #1DB954;
-  margin-left: -11px;
-  margin-right: -11px;
-  padding-bottom: 11px;
-  margin-bottom: -11px;
-  margin-top: 66px;
+  margin-left: -0.78571429em; /*11/14 == 0.78571429em */
+  margin-right: -0.78571429em; /*11/14 == 0.78571429em */
+  padding-bottom: 0.78571429em; /*11/14 == 0.78571429em */
+  margin-bottom: -0.78571429em; /*11/14 == 0.78571429em */
+  margin-top: 4.71428571em; /* 66/14 == 4.71428571em */
   color: white;
   text-align: center;
 }
 
-.thank-you > *{
+.thank-you > * {
   font-family: serif;
   font-style: italic;
   color: #1DB954;
@@ -143,20 +151,16 @@ footer {
 
 .back {
   color: #191414;
-  padding: 6px;
+  padding: 0.46153846em; /*6/13 == 0.46153846em*/
   box-sizing: content-box;
   background-color: #D3D3D3;
-  margin-top: 22px;
+  margin-top: 1.69230769em; /*22/13 == 1.69230769em*/
   display: inline-block;
-  font-size: 13px;
-  border-radius: 5px;
+  font-size: 0.72222222em; /*13/18 == 0.72222222em */
+  border-radius: 0.38461538em; /*5/13 == 0.38461538em */
   border-color: white;
-  border-width: 4px;
+  border-width: 0.30769231em; /*4/13 == 0.30769231em*/
   text-decoration: none;
-}
-
-.checkbox {
-  width: unset;
 }
 
 #delivery label::after {
@@ -165,27 +169,24 @@ footer {
 }
 
 .forward {
-  padding: 6px;
+  padding: 0.46153846em; /*6/13 == 0.46153846em*/
   color: white;
   background-color: #1DB954;
-  margin-top: 22px;
-  margin-bottom: 66px;
+  margin-top: 1.69230769em; /*22/13 == 1.69230769em*/
+  margin-bottom: 5.07692308em; /*66/13 == 5.07692308em*/
   box-sizing: content-box;
   float: right;
-  border-radius: 5px;
+  border-radius: 0.38461538em; /*5/13 == 0.38461538em */
   border-color: black;
-  margin-left: 6px;
+  margin-left: 0.46153846em; /*6/13 == 0.46153846em */
 }
 
 fieldset[aria-hidden="true"] {
   display: none;
 }
 
-select {
-  width: 100%;
-}
+@media screen and (min-width: 25em /*400/16 == 25*/) {
 
-@media screen and (min-width: 400px)  {
   aside {
     margin-left: 5%;
     width: 90%;
@@ -204,48 +205,46 @@ select {
   .short-input > input {
     width: 40%;
   }
-
 }
 
-@media screen and (min-width: 500px)  {
-  form > fieldset > ol >li > input,
-  select {
+@media screen and (min-width: 31.25em /*500/16 == 31.25*/) {
+
+  select,
+  form > fieldset > ol > li > input {
     display: block;
-    max-width: 300px;
+    max-width: 16.6666667em;/*300/18 == 16.6666667em*/
   }
 
-  form > fieldset > ol >li > .checkbox {
-  display: inline;
+  form > fieldset > ol > li > .checkbox {
+    display: inline;
   }
-
 }
 
+@media screen and (min-width: 37.5em /*600/16 == 37.5*/) {
 
-@media screen and (min-width: 600px)  {
+  aside {
+    margin-left: 5%;
+  }
 
-    aside {
-      margin-left: 5%;
-    }
+  form {
+    width: 90%;
+    margin: auto;
+  }
 
-    form {
-      width: 90%;
-      margin: auto;
-    }
+  form > fieldset > ol {
+    margin-left: 8%;
+  }
 
-    form > fieldset > ol {
-      margin-left: 8%;
-    }
+  form > ol > * {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 
-    form > ol > * {
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%
-    }
-
-    form > fieldset > ol > * {
-      margin-left: auto;
-      margin-right: auto;
-      width: 68%;
+  form > fieldset > ol > * {
+    margin-left: auto;
+    margin-right: auto;
+    width: 68%;
   }
 
   .short-input > input {
@@ -255,13 +254,14 @@ select {
 }
 
 
-@media screen and (min-width: 750px)  {
+@media screen and (min-width: 46.875em /*750/16 == 46.875*/) {
+
   form > fieldset > ol {
-  margin-left: 15%;
+    margin-left: 15%;
   }
 
   aside > * > * {
-    margin: 20px;
+    margin: 1.11111111em; /*20/18 == 1.11111111em*/
   }
 
   #ticket {
@@ -269,7 +269,8 @@ select {
   }
 }
 
-@media screen and (min-width: 1000px)  {
+@media screen and (min-width: 62.5em /*1000/16 == 62.5*/ ) {
+
   form {
     padding-left: 14%;
   }
@@ -283,9 +284,5 @@ select {
     width: 50%;
   }
 
-  aside > * > * {
-    margin: 20px;
-  }
-
 }
- /* the content starts to look weird at this dimension: 1060px+*/
+/* the content starts to look weird at this dimension: 1060px+*/

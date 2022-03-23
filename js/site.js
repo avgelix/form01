@@ -120,17 +120,7 @@ email.addEventListener('focus', function() {
 });
 }
 
-  if (jsonObject) {
-    try {
-      jsObject = JSON.parse(jsonObject);
-    } catch(e) {
-      console.error(e);
-      jsObject = {};
-    }
-  }
 
-  return jsObject;
-}
 
 //set required fields for credit card paymentoption
 var cardType = document.querySelector('#card-type');
@@ -220,39 +210,47 @@ if (page.id='payment') {
 }
 
 
-//billing
-if(page.id === 'billing'){
-  var form = document.querySelector("form");
-  restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('submit', submitForm);
+// add shipping cost to cost of order
+var regularShip = document.querySelector('input[name="regular"]');
+if (regularShip !== null) {
+  regularShip.addEventListener('change', function(event) {
+    if(event.target.checked){
+      var shippingCost = document.createElement("li");
+      shippingCost.id = "shippingCost";
+      shippingCost.innerText= "Shipping: $7";
+      document.querySelector('#costs').appendChild(shippingCost);
+    } else {
+      document.querySelector("#shippingCost").remove();
+    }
+  });
 }
 
 
-
-
-
-
-
-
-
-
-
-// create error if credit card expiration year is before 2022
-var errorClass = targetElement.name + '-error';
-var errorEl = document.querySelector('.' + errorClass);
-
-  if (targetElement.value.lenght < 3) {
-    // Don't add duplicate errors
-    if (!errorEl) {
-      var errorText = 'CVC must be 3 numbers long';
-      errorEl = document.createElement('p');
-      errorEl.className = errorClass
-      errorEl.innerText = errorText;
-      targetElement.before(errorEl);
+var fastShip = document.querySelector('input[name="fast"]');
+if (fastShip !== null) {
+  fastShip.addEventListener('change', function(event) {
+    if(event.target.checked){
+    var shippingCost = document.createElement("li");
+    shippingCost.id = "shippingCost";
+    shippingCost.innerText= "Shipping: $12";
+    document.querySelector('#costs').appendChild(shippingCost);
+    } else {
+      document.querySelector("#shippingCost").remove();
     }
-  } else {
-    if (errorEl) {
-      errorEl.remove();
+  });
+}
+
+
+var expShip = document.querySelector('input[name="express"]');
+if (expShip !== null) {
+  expShip.addEventListener('change', function(event) {
+    if(event.target.checked){
+    var shippingCost = document.createElement('li');
+    shippingCost.id = "shippingCost";
+    shippingCost.innerText= 'Shipping: $15'
+    document.querySelector('#costs').appendChild(shippingCost);
+    } else {
+      document.querySelector("#shippingCost").remove();
     }
-  }
+  });
 }

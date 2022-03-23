@@ -195,28 +195,30 @@ newBillingInfoCheckbox.addEventListener('change', function(event) {
 
 
 
+var page = document.querySelector('html');
 
-//index.html login page
-if(page.id === 'login'){
-  var form = document.querySelector("form");
-  restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('submit', submitForm);
+//create error if credit card number contains letters
+if (page.id='payment') {
+  if (cardNumber !== null) {
+   if (typeof(cardNumber) === "string" ) {
+     var errorText = 'Credit card number cannot contain letters';
+     errorEl = document.createElement('p');
+     errorEl.innerText = errorText;
+   }
+ }
 }
 
-
-//shipping
-if(page.id === 'shipping'){
-  var form = document.querySelector("form");
-  restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('submit', submitForm);
+// create error if credit card csc is less than 3 numbers
+ if (page.id='payment') {
+   if (cardCsc !== null) {
+     if (cardCsc.length < 3) {
+       var errorText = 'CVC must be 3 numbers long';
+       errorElement = document.createElement('p');
+       errorElement.innerText = errorText;
+     }
+   }
 }
 
-//payment
-if(page.id === 'payment'){
-  var form = document.querySelector("form");
-  restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('submit', submitForm);
-}
 
 //billing
 if(page.id === 'billing'){

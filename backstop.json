@@ -3,13 +3,18 @@
   "viewports": [
     {
       "label": "phone",
-      "width": 320,
-      "height": 480
+      "width": 350,
+      "height": 580
     },
     {
       "label": "tablet",
-      "width": 1024,
-      "height": 768
+      "width": 724,
+      "height": 608
+    },
+    {
+      "label": "laptop",
+      "width": 1000,
+      "height": 700
     }
   ],
   "onBeforeScript": "puppet/onBefore.js",
@@ -17,22 +22,8 @@
   "scenarios": [
     {
       "label": "BackstopJS Homepage",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "url": "https://garris.github.io/BackstopJS/",
-      "referenceUrl": "",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
       "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
     }
   ],
   "paths": {

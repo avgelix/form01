@@ -136,11 +136,15 @@ footer {
   background-color: #1DB954;
   margin-left: -0.78571429em; /*11/14 == 0.78571429em */
   margin-right: -0.78571429em; /*11/14 == 0.78571429em */
-  padding-bottom: 0.78571429em; /*11/14 == 0.78571429em */
+  padding-bottom: 3.14285714em; /*44/14 == 3.14285714em*/
   margin-bottom: -0.78571429em; /*11/14 == 0.78571429em */
-  margin-top: 4.71428571em; /* 66/14 == 4.71428571em */
+  margin-top: 6.28571429em; /* 88/14 == 6.28571429em */
   color: white;
   text-align: center;
+}
+
+footer > p {
+  padding: 1.57142857em; /*22/14 == 1.57142857em*/
 }
 
 .thank-you > * {
@@ -161,6 +165,7 @@ footer {
   border-color: white;
   border-width: 0.30769231em; /*4/13 == 0.30769231em*/
   text-decoration: none;
+  margin-left: 0.46153846em; /*6/13 == 0.46153846em */
 }
 
 #delivery label::after {
@@ -204,6 +209,10 @@ fieldset[aria-hidden="true"] {
 
   .short-input > input {
     width: 40%;
+  }
+
+  footer {
+    padding-bottom: 4.71428571em; /*66/14 == 4.71428571em*/
   }
 }
 

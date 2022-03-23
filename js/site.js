@@ -91,45 +91,34 @@ if (newBillingFieldset !== null) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-//-------------LOCAL STORAGE---------------//
-
-var page = document.querySelector('html');
-
-
-// form submission button
-function submitForm(event) {
-  var targetElement = event.target;
-  event.preventDefault();
-  writeFormDataToLocalStorage(targetElement.name); // STORE all the form data
-  window.location.href = targetElement.action;
+//remove placeholder from elements when in focus
+var cscInput = document.querySelector('#card-csc');
+if (cscInput !== null) {
+cscInput.addEventListener('focus', function() {
+  this.removeAttribute('placeholder');
+});
 }
 
-
-// create new local storage object or find existing one
-function findOrCreateLocalStorageObject(keyName) {
-  var jsObject = readJsonFromLocalStorage(keyName);
-
-  if (Object.keys(jsObject).length === 0) {
-    writeJsonToLocalStorage(keyName, jsObject);
-  }
-  return jsObject;
+var cardExp = document.querySelector('#card-expires');
+if (cardExp !== null) {
+cardExp.addEventListener('focus', function() {
+  this.removeAttribute('placeholder');
+});
 }
 
+var address = document.querySelector('#address');
+if (address !== null) {
+address.addEventListener('focus', function() {
+  this.removeAttribute('placeholder');
+});
+}
 
-// read from local storage
-function readJsonFromLocalStorage(keyName) {
-  var jsonObject = localStorage.getItem(keyName);
-  var jsObject = {};
+var email = document.querySelector('#email');
+if (email !== null) {
+email.addEventListener('focus', function() {
+  this.removeAttribute('placeholder');
+});
+}
 
   if (jsonObject) {
     try {

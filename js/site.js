@@ -132,31 +132,39 @@ email.addEventListener('focus', function() {
   return jsObject;
 }
 
+//set required fields for credit card paymentoption
+var cardType = document.querySelector('#card-type');
+var cardNumber = document.querySelector('#card-number');
+var cardCsc = document.querySelector('#card-csc');
+var cardExp = document.querySelector('#card-expires');
 
-// write to local storage
-function writeJsonToLocalStorage(keyName, jsObject) {
-  localStorage.setItem(keyName, JSON.stringify(jsObject));
+if (creditCardCheckbox !== null) {
+  creditCardCheckbox.addEventListener('change', function(event) {
+    if(event.target.checked){
+      cardType.setAttribute('required', '');
+      cardNumber.setAttribute('required', '');
+      cardCsc.setAttribute('required', '');
+      cardExp.setAttribute('required', '');
+    } else {
+      cardType.removeAttribute('required');
+      cardNumber.removeAttribute('required');
+      cardCsc.removeAttribute('required');
+      cardExp.removeAttribute('required');
+    }
+  });
 }
 
 
-function writeFormDataToLocalStorage(formName, inputElement) {
-  var formData = findOrCreateLocalStorageObject(formName);
-
-  // Set just a single input value
-  if (inputElement) {
-    formData[inputElement.name] = inputElement.value;
+//set required field for cash paymentoption
+var acknowledgement = document.querySelector('#cash-acknowledge');
+if (cashPaymentCheckbox !== null) {
+cashPaymentCheckbox.addEventListener('change', function(event) {
+  if(event.target.checked) {
+    acknowledgement.setAttribute('required', '');
   } else {
-    // Set all form input values, e.g., on a submit event
-    var formElements = document.forms[formName].elements;
-    for (var i = 0; i < formElements.length; i++) {
-      // Don't store empty elements, like the submit button
-      if (formElements[i].value !== "") {
-        formData[formElements[i].name] = formElements[i].value;
-      }
-    }
+    acknowledgement.removeAttribute('required');
   }
-
-  writeJsonToLocalStorage(formName, formData);
+});
 }
 
 

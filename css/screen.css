@@ -192,7 +192,7 @@ fieldset[aria-hidden="true"] {
   display: none;
 }
 
-@media screen and (min-width: 25em /*400/16 == 25*/) {
+@media screen and (min-width: 21.875em /*350/16 == 21.875em*/) {
 
   aside {
     margin-left: 5%;

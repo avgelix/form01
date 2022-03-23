@@ -21,9 +21,9 @@
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "BackstopJS Homepage",
-      "url": "https://garris.github.io/BackstopJS/",
-      "misMatchThreshold" : 0.1,
+      "label": "Login Page",
+      "url": "http://localhost:8080/",
+      "misMatchThreshold" : 0.1
     }
   ],
   "paths": {

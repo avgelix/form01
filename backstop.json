@@ -24,6 +24,31 @@
       "label": "Login Page",
       "url": "http://localhost:8080/",
       "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Shipping Page",
+      "url": "http://localhost:8080/shipping",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Delivery Page",
+      "url": "http://localhost:8080/delivery",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Payment Page",
+      "url": "http://localhost:8080/payment",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Billing Page",
+      "url": "http://localhost:8080/billing",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Summary Page",
+      "url": "http://localhost:8080/summary",
+      "misMatchThreshold" : 0.1
     }
   ],
   "paths": {

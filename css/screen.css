@@ -175,10 +175,12 @@ footer > p {
 
 .forward {
   padding: 0.46153846em; /*6/13 == 0.46153846em*/
+  padding-top: 0.69230769em; /*9/13 == 0.69230769em */
+  padding-bottom: 0.53846154em; /*7/13 == 0.53846154 */
   color: white;
   background-color: #1DB954;
   margin-top: 1.69230769em; /*22/13 == 1.69230769em*/
-  margin-bottom: 5.07692308em; /*66/13 == 5.07692308em*/
+  margin-bottom: 5em; /*66/13 == 5em*/
   box-sizing: content-box;
   float: right;
   border-radius: 0.38461538em; /*5/13 == 0.38461538em */

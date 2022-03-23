@@ -168,20 +168,30 @@ cashPaymentCheckbox.addEventListener('change', function(event) {
 }
 
 
+//set required fields for new billing address information
+var fullName = document.querySelector('#fullname');
+var address = document.querySelector('#address');
+var zip = document.querySelector('#zip');
+var city = document.querySelector('#city');
+var state = document.querySelector('#state');
 
-//remove element from local storage
-function destroyFormDataInLocalStorage(formName) {
-  localStorage.removeItem(formName);
+if (newBillingInfoCheckbox !== null) {
+newBillingInfoCheckbox.addEventListener('change', function(event) {
+    if(event.target.checked){
+      fullName.setAttribute('required', '');
+      address.setAttribute('required', '');
+      zip.setAttribute('required', '');
+      city.setAttribute('required', '');
+      state.setAttribute('required', '');
+    } else {
+      fullName.removeAttribute('required');
+      address.removeAttribute('required');
+      zip.removeAttribute('required');
+      city.removeAttribute('required');
+      state.removeAttribute('required');
+    }
+  });
 }
-
-
-// recover info from local storage
-function restoreFormDataFromLocalStorage(formName) {
-  var jsObject = readJsonFromLocalStorage(formName);
-  var formValues = Object.entries(jsObject);
-  if (formValues.length === 0) {
-    return; // nothing to restore
-  }
 
 
 

@@ -262,6 +262,11 @@ fieldset[aria-hidden="true"] {
     width: 30%;
   }
 
+  .forward {
+    margin-top: 1.5em;
+    padding-bottom: 0.69230769em; /*9/13 == 0.69230769em */
+  }
+
 }
 
 

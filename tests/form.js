@@ -18,7 +18,7 @@ describe ('Login Page', function() {
 
 });
 
-describe ('Login Page', function() {
+describe ('Delivery Page', function() {
 
   it('the added delivery cost should match the user preference (regular)', function(browser) {
     browser

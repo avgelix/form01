@@ -254,3 +254,197 @@ if (expShip !== null) {
     }
   });
 }
+
+
+
+//LAST TRY at localStorage
+
+page.classList.add('js');
+
+//repeat for every page
+if (page.id === 'login') {
+  var form = document.querySelector('form[name="login"]');
+  restoreFormDataFromLocalStorage(form.name);
+  form.addEventListener('input', debounce(handleFormInputActivity, 400));
+  form.addEventListener('change', handleFormInputActivity);
+  form.addEventListener('submit', handleFormSubmission);
+}
+
+if (page.id === 'shipping') {
+  var form = document.querySelector('form[name="shipping-form"]');
+  restoreFormDataFromLocalStorage(form.name);
+  form.addEventListener('input', debounce(handleFormInputActivity, 400));
+  form.addEventListener('change', handleFormInputActivity);
+  form.addEventListener('submit', handleFormSubmission);
+}
+
+if (page.id === 'delivery') {
+  var form = document.querySelector('form[name="delivery-form"]');
+  restoreFormDataFromLocalStorage(form.name);
+  form.addEventListener('input', debounce(handleFormInputActivity, 400));
+  form.addEventListener('change', handleFormInputActivity);
+  form.addEventListener('submit', handleFormSubmission);
+}
+
+if (page.id === 'payment') {
+  var form = document.querySelector('form[name="payment-form"]');
+  restoreFormDataFromLocalStorage(form.name);
+  form.addEventListener('input', debounce(handleFormInputActivity, 400));
+  form.addEventListener('change', handleFormInputActivity);
+  form.addEventListener('submit', handleFormSubmission);
+}
+
+if (page.id === 'billing') {
+  var form = document.querySelector('form[name="billing-form"]');
+  restoreFormDataFromLocalStorage(form.name);
+  form.addEventListener('input', debounce(handleFormInputActivity, 400));
+  form.addEventListener('change', handleFormInputActivity);
+  form.addEventListener('submit', handleFormSubmission);
+}
+
+//
+
+
+function handleFormInputActivity(event) {
+  var targetElement = event.target;
+  var inputElements = ['INPUT', 'SELECT', 'CHECKBOX'];
+   if (!inputElements.includes(targetElement.tagName)) {
+     return;
+   }
+
+   writeFormDataToLocalStorage(targetElement.form.name, targetElement);
+
+}
+
+
+function handleFormSubmission(event) {
+  var targetElement = event.target;
+  event.preventDefault();
+  writeFormDataToLocalStorage(targetElement.name);
+  window.location.href = targetElement.action;
+}
+
+
+function writeFormDataToLocalStorage(formName, inputElement) {
+  var formData = findOrCreateLocalStorageObject(formName);
+
+
+  if (inputElement) {
+    formData[inputElement.name] = inputElement.value;
+  } else {
+    var formElements = document.forms[formName].elements;
+    for (var i = 0; i < formElements.length; i++) {
+      if (formElements[i].value !== "") {
+        formData[formElements[i].name] = formElements[i].value;
+      }
+    }
+  }
+
+  writeJsonToLocalStorage(formName, formData);
+}
+
+
+
+function findOrCreateLocalStorageObject(keyName) {
+  var jsObject = readJsonFromLocalStorage(keyName);
+
+  if (Object.keys(jsObject).length === 0) {
+    writeJsonToLocalStorage(keyName, jsObject);
+  }
+
+  return jsObject;
+}
+
+
+
+
+function writeJsonToLocalStorage(keyName, jsObject) {
+  localStorage.setItem(keyName, JSON.stringify(jsObject));
+}
+
+
+
+function destroyFormDataInLocalStorage(formName) {
+  localStorage.removeItem(formName);
+}
+
+
+
+//function to KEEP entered data when returning to a page
+function restoreFormDataFromLocalStorage(formName) {
+  var jsObject = readJsonFromLocalStorage(formName);
+  var formValues = Object.entries(jsObject);
+  if (formValues.length === 0) {
+    return; // nothing to restore
+  }
+  //list to write all form elements to local
+  var formElements = document.forms[formName].elements;
+  for (var i = 0; i < formValues.length; i++) {
+    console.log('Form input key:', formValues[i][0], 'Form input value:', formValues[i][1]);
+    //take entered data from local storage and assign to element
+    formElements[formValues[i][0]].value = formValues[i][1];
+  }
+}
+
+
+
+
+function readJsonFromLocalStorage(keyName){
+  var jsonObject = localStorage.getItem(keyName);
+  var jsObject = {};
+
+  if(!jsonObject) {
+    jsObject = {};
+  } else {
+    try {
+      jsObject = JSON.parse(jsonObject);
+    } catch (e) {
+      console.error(e);
+      jsObject = {};
+    }
+  }
+
+  return jsObject;
+}
+
+
+function debounce(callback, delay) {
+  var timer; // function-scope timer to debounce()
+  return function() {
+    var context = this; // track function-calling context
+    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+    var args = arguments; // hold onto arguments object
+    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+
+    // Reset the timer
+    clearTimeout(timer);
+
+    // Set the new timer
+    timer = setTimeout(function() {
+      // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+      callback.apply(context, args);
+    }, delay);
+  }
+}
+
+
+// throttle to slow execution to a certain amount of elapsed time (limit)
+function throttle(callback, limit) {
+  var throttling; // function-scope boolean for testing throttle state
+  return function() {
+    var context = this; // track function-calling context
+    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+    var args = arguments; // hold onto arguments object
+    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+
+    // Run the function if not currently throttling
+    if (!throttling) {
+      // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+      callback.apply(context, args);
+      throttling = true;
+      setTimeout(function() {
+        throttling = false;
+      }, limit);
+    }
+  }
+}

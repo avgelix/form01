@@ -236,7 +236,9 @@ page.classList.add('js');
 if (page.id === 'login') {
     var form = document.querySelector('form[name="login"]');
     restoreFormDataFromLocalStorage(form.name);
-    form.addEventListener('submit', handleFormSubmission);
+    if (document.forms[formName].elements !== null) {
+        form.addEventListener('submit', handleFormSubmission);
+    }    
 }
 
 if (page.id === 'shipping') {

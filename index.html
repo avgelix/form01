@@ -7,57 +7,54 @@
   </head>
   <body>
 
+    <header>
+      <figure id="logo">
+        <img src="assets/Spotify_Logo_CMYK_Green.png" alt="Spotify logo"/>
+        <figcaption></figcaption>
+      </figure>
+      <h1>Log In</h1>
+    </header>
 
-  <header>
-    <figure id="logo">
-      <img src="assets/Spotify_Logo_CMYK_Green.png" alt="Spotify logo"/>
-      <figcaption></figcaption>
-    </figure>
-    <h1>Log In</h1>
-  </header>
+    <main id="content">
 
-<main id="content">
+      <form aria-labelledby="label-login" name="login" action="shipping/" method="get">
+        <fieldset name="returning">
+          <ol>
+            <li>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" value="" placeholder="user@gmail.com" required/>
+            </li>
+            <li class="short-input">
+              <label for="password">Password</label>
+              <input type="password" name="password" id="password" value="" required/>
+            </li>
+            <li>
+              <input type="checkbox" class= "checkbox" name="create" id="create" value=""/>
+              <label for="create">I need to create a new account</label>
+            </li>
+          </ol>
+        </fieldset>
 
-  <form aria-labelledby="label-login" name="login" action="shipping/" method="get">
+        <fieldset name="new" id="new">
+          <ol>
+            <li>
+              <label for="name">Full Name</label>
+              <input type="text" name="name" id="name"/>
+            </li>
+            <li class="short-input">
+              <label for="birthday">Birthday</label>
+              <input type="date" name="birthday" id="birthday"/>
+            </li>
+          </ol>
+        </fieldset>
+        <button type="submit" name="proceed-button" class="forward">Log in</button>
+      </form>
+    </main>
 
-    <fieldset name="returning">
-      <ol>
-        <li>
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" value="" placeholder="user@gmail.com" required/>
-        </li>
-        <li class="short-input">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" value="" required/>
-        </li>
-        <li>
-          <input type="checkbox" class= "checkbox" name="create" id="create" value=""/>
-          <label for="create">I need to create a new account</label>
-        </li>
-      </ol>
-    </fieldset>
-
-    <fieldset name="new" id="new">
-      <ol>
-        <li>
-          <label for="name">Full Name</label>
-          <input type="text" name="name" id="name"/>
-        </li>
-        <li class="short-input">
-          <label for="birthday">Birthday</label>
-          <input type="date" name="birthday" id="birthday"/>
-        </li>
-      </ol>
-    </fieldset>
-
-    <button type="submit" name="proceed-button" class="forward">Log in</button>
-
-    </form>
-  </main>
-
-  <script src="js/site.js"></script>
     <footer>
       <p>Copyright 2022 Angela Petrone. All rights reserved.</p>
     </footer>
+
+    <script src="js/site.js"></script>
   </body>
 </html>

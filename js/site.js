@@ -258,76 +258,52 @@ if (expShip !== null) {
 
 
 //LAST TRY at localStorage
-
+var page = document.querySelector('html');
 page.classList.add('js');
 
 //repeat for every page
 if (page.id === 'login') {
   var form = document.querySelector('form[name="login"]');
   restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('input', debounce(handleFormInputActivity, 400));
-  form.addEventListener('change', handleFormInputActivity);
   form.addEventListener('submit', handleFormSubmission);
 }
 
 if (page.id === 'shipping') {
   var form = document.querySelector('form[name="shipping-form"]');
   restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('input', debounce(handleFormInputActivity, 400));
-  form.addEventListener('change', handleFormInputActivity);
   form.addEventListener('submit', handleFormSubmission);
 }
 
 if (page.id === 'delivery') {
   var form = document.querySelector('form[name="delivery-form"]');
   restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('input', debounce(handleFormInputActivity, 400));
-  form.addEventListener('change', handleFormInputActivity);
   form.addEventListener('submit', handleFormSubmission);
 }
 
 if (page.id === 'payment') {
   var form = document.querySelector('form[name="payment-form"]');
   restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('input', debounce(handleFormInputActivity, 400));
-  form.addEventListener('change', handleFormInputActivity);
   form.addEventListener('submit', handleFormSubmission);
 }
 
 if (page.id === 'billing') {
   var form = document.querySelector('form[name="billing-form"]');
   restoreFormDataFromLocalStorage(form.name);
-  form.addEventListener('input', debounce(handleFormInputActivity, 400));
-  form.addEventListener('change', handleFormInputActivity);
   form.addEventListener('submit', handleFormSubmission);
 }
 
-//
 
-
-function handleFormInputActivity(event) {
-  var targetElement = event.target;
-  var inputElements = ['INPUT', 'SELECT', 'CHECKBOX'];
-   if (!inputElements.includes(targetElement.tagName)) {
-     return;
-   }
-
-   writeFormDataToLocalStorage(targetElement.form.name, targetElement);
-
-}
-
-
+//function to submit data and proceed to next page
 function handleFormSubmission(event) {
-  var targetElement = event.target;
-  event.preventDefault();
-  writeFormDataToLocalStorage(targetElement.name);
-  window.location.href = targetElement.action;
+  var targetElement = event.target; //action on the page
+  event.preventDefault(); // STOP the default browser behavior
+  writeFormDataToLocalStorage(targetElement.name); // STORE all the form data
+  window.location.href = form.action; // PROCEED to the URL referenced by the form action
 }
 
 
 function writeFormDataToLocalStorage(formName, inputElement) {
   var formData = findOrCreateLocalStorageObject(formName);
-
 
   if (inputElement) {
     formData[inputElement.name] = inputElement.value;

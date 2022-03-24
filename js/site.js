@@ -74,7 +74,7 @@ var sameShippingAndBillingCheckbox = document.querySelector('#shipping-info');
 if (newBillingFieldset !== null) {
   newBillingFieldset.setAttribute('disabled', 'disabled');
   newBillingFieldset.setAttribute('aria-hidden', 'true');
-  
+
   newBillingInfoCheckbox.addEventListener('change', function(event) {
     if(event.target.checked) {
       sameShippingAndBillingCheckbox.setAttribute('disabled', 'disabled');
@@ -217,7 +217,7 @@ if (regularShip !== null) {
     if(event.target.checked){
       var shippingCost = document.createElement("li");
       shippingCost.id = "shippingCost";
-      shippingCost.innerText= "Shipping: $7";
+      shippingCost.innerText= "Delivery: $7";
       document.querySelector('#costs').appendChild(shippingCost);
     } else {
       document.querySelector("#shippingCost").remove();
@@ -232,7 +232,7 @@ if (fastShip !== null) {
     if(event.target.checked){
     var shippingCost = document.createElement("li");
     shippingCost.id = "shippingCost";
-    shippingCost.innerText= "Shipping: $12";
+    shippingCost.innerText= "Delivery: $12";
     document.querySelector('#costs').appendChild(shippingCost);
     } else {
       document.querySelector("#shippingCost").remove();
@@ -247,7 +247,7 @@ if (expShip !== null) {
     if(event.target.checked){
     var shippingCost = document.createElement('li');
     shippingCost.id = "shippingCost";
-    shippingCost.innerText= 'Shipping: $15'
+    shippingCost.innerText= 'Delivery: $15'
     document.querySelector('#costs').appendChild(shippingCost);
     } else {
       document.querySelector("#shippingCost").remove();

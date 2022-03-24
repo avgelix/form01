@@ -183,33 +183,6 @@ newBillingInfoCheckbox.addEventListener('change', function(event) {
   });
 }
 
-
-
-var page = document.querySelector('html');
-
-//create error if credit card number contains letters
-if (page.id='payment') {
-  if (cardNumber !== null) {
-   if (typeof(cardNumber) === "string" ) {
-     var errorText = 'Credit card number cannot contain letters';
-     errorEl = document.createElement('p');
-     errorEl.innerText = errorText;
-   }
- }
-}
-
-// create error if credit card csc is less than 3 numbers
- if (page.id='payment') {
-   if (cardCsc !== null) {
-     if (cardCsc.length < 3) {
-       var errorText = 'CVC must be 3 numbers long';
-       errorElement = document.createElement('p');
-       errorElement.innerText = errorText;
-     }
-   }
-}
-
-
 // add shipping cost to cost of order
 var regularShip = document.querySelector('input[name="regular"]');
 if (regularShip !== null) {

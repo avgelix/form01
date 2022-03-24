@@ -21,34 +21,104 @@
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "Login Page",
+      "label": "Completed Login Page",
       "url": "http://localhost:8080/",
+      "keyPressSelectors": [
+        {
+          "selector": "#email",
+          "keyPress": "angelapetrone@gmail.com"
+        },
+        {
+          "selector": "#password",
+          "keyPress": "Dantethepug8!"
+        }
+      ],
       "misMatchThreshold" : 0.1
     },
     {
-      "label": "Shipping Page",
-      "url": "http://localhost:8080/shipping",
-      "misMatchThreshold" : 0.1
+        "label": "Login Page",
+        "url": "http://localhost:8080/",
+        "misMatchThreshold" : 0.1
     },
     {
-      "label": "Delivery Page",
-      "url": "http://localhost:8080/delivery",
-      "misMatchThreshold" : 0.1
+        "label": "Shipping Page",
+        "url": "http://localhost:8080/shipping",
+        "misMatchThreshold" : 0.1
     },
     {
-      "label": "Payment Page",
-      "url": "http://localhost:8080/payment",
-      "misMatchThreshold" : 0.1
+        "label": "Completed Shipping Page",
+        "url": "http://localhost:8080/shipping",
+        "keyPressSelectors": [
+          {
+            "selector": "#fullname",
+            "keyPress": "Angela Petrone"
+          },
+          {
+            "selector": "#address",
+            "keyPress": "1234 Dreams Rd!"
+          },
+          {
+            "selector": "#zip",
+            "keyPress": "123445"
+          },
+          {
+            "selector": "#city",
+            "keyPress": "Chicago"
+          }
+        ],
+        "misMatchThreshold" : 0.1
     },
     {
-      "label": "Billing Page",
-      "url": "http://localhost:8080/billing",
-      "misMatchThreshold" : 0.1
+        "label": "Delivery Page",
+        "url": "http://localhost:8080/delivery",
+        "misMatchThreshold" : 0.1
     },
     {
-      "label": "Summary Page",
-      "url": "http://localhost:8080/summary",
-      "misMatchThreshold" : 0.1
+        "label": "Regular Delivery Option Chosen",
+        "url": "http://localhost:8080/delivery",
+        "clickSelector": "#regular",
+        "misMatchThreshold" : 0.1
+    },
+    {
+        "label": "Fast Delivery Option Chosen",
+        "url": "http://localhost:8080/delivery",
+        "clickSelector": "#fast",
+        "misMatchThreshold" : 0.1
+    },
+    {
+        "label": "Express Delivery Option Chosen",
+        "url": "http://localhost:8080/delivery",
+        "clickSelector": "#express",
+        "misMatchThreshold" : 0.1
+    },
+    {
+        "label": "Payment Page: Cash Payment Checked",
+        "url": "http://localhost:8080/payment",
+        "clickSelector": "#cash-payment",
+        "misMatchThreshold" : 0.1
+    },
+    {
+        "label": "Payment Page: Card Payment Checked",
+        "url": "http://localhost:8080/payment",
+        "clickSelector": "#credit-payment",
+        "misMatchThreshold" : 0.1
+    },
+    {
+        "label": "Billing Page: New Billing Checked",
+        "url": "http://localhost:8080/billing",
+        "clickSelector": "#new-info",
+        "misMatchThreshold" : 0.1
+    },
+    {
+        "label": "Billing Page: Same as Shipping Checked",
+        "url": "http://localhost:8080/billing",
+        "clickSelector": "#shipping-info",
+        "misMatchThreshold" : 0.1
+    },
+    {
+        "label": "Summary Page",
+        "url": "http://localhost:8080/summary",
+        "misMatchThreshold" : 0.1
     }
   ],
   "paths": {

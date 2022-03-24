@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/avgelix/form01/issues"
   },
-  "homepage": "https://github.com/avgelix/form01#readme"
+  "homepage": "https://github.com/avgelix/form01#readme",
+  "devDependencies": {
+    "chromedriver": "^99.0.0",
+    "geckodriver": "^3.0.1",
+    "nightwatch": "^2.0.10"
+  }
 }
